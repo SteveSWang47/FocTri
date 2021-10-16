@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int c[9], pla;
+int c[9], pla, as;
 
 int main(int argc, char **argv)
 {
@@ -23,11 +23,13 @@ int main(int argc, char **argv)
             c[pla] = i;
         }
         clear();
+        mvprintw(0,0,"%d",as);
         mvprintw(LINES/2-2, COLS/2-2, "%d %d %d", c[0], c[1], c[2]);
         mvprintw(LINES/2, COLS/2-2, "%d %d %d", c[3], c[4], c[5]);
         mvprintw(LINES/2+2, COLS/2-2, "%d %d %d", c[6], c[7], c[8]);
         refresh();
         char t = getch();
+        as++;
         if(t == 'q') break;
     }
     endwin();
